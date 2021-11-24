@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+BREAK = '_______________________'
 # 1 Метод, который выполняет проверку счастливого билета, в шестизначном номере которого сумма
 # первых трех цифр совпадает с суммой трех последних
 def check_lucky?(string)
@@ -12,7 +13,7 @@ def check_lucky?(string)
 end
 
 puts check_lucky?('234566')
-puts '_______________________'
+puts BREAK
 
 # 2 метод, который находит n-e число Фибоначчи. Числа Фибоначчи – элементы
 # числовой последовательности, в которой первые два числа 0 и 1, а каждоепоследующее число равно
@@ -24,7 +25,7 @@ def fibohacci(n)
 end
 
 puts fibohacci(9)
-puts '_______________________'
+puts BREAK
 
 # 3 метод, находит факториал числа n, не используя рекурсии. Факториал n это произведение всех
 # чисел от 1 до n включительно
@@ -33,7 +34,7 @@ def factorial(n)
 end
 
 puts factorial(5)
-puts '_______________________'
+puts BREAK
 
 # 4 метод, который выводит 100 чисел, заменяя число на «Fizz» если число делится на 3 без остатка,
 # «Buzz» если на 5, и «FizzBuzz» если на делится 3 и 5 одновременно
@@ -51,5 +52,22 @@ def change_number(number)
   end
 end
 
+def change_number_2(number = 100)
+  (1..number).each do |n|
+    n =
+      if (n % 15).zero?
+        'FizzBuzz'
+      elsif (n % 3).zero?
+        'Fizz'
+      elsif (n % 5).zero?
+        'Buzz'
+      else
+        n
+      end
+    puts n
+  end
+end
+
 change_number(100)
-puts '_______________________'
+puts BREAK
+change_number_2
