@@ -147,7 +147,7 @@ end
 #to json
 class JsonReportPresenter
   def self.print(report)
-    report.to_json
+    { json: report }.to_json
   end
 end
 
